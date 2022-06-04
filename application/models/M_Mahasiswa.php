@@ -21,4 +21,9 @@ class M_Mahasiswa extends CI_Model{
         $this->db->where('nim', $nim);
         $this->db->update('mahasiswa', $data);
     }
+
+    function deleteDataMahasiswa($nim){
+        $this->db->where('nim', $nim);
+        $this->db->delete('mahasiswa');
+    }
 }

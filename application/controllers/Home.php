@@ -65,4 +65,9 @@ class Home extends CI_Controller {
 		redirect(base_url(''));
 
 	}
+
+	public function fungsiDelete($nim){
+		$this->M_Mahasiswa->deleteDataMahasiswa($nim);
+		redirect(base_url(''));
+	}
 }
