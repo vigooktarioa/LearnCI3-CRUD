@@ -21,18 +21,23 @@
 			<td>Aksi</td>
 		</tr>
 		<?php
-		foreach ($queryAllMhs as $row)
+		$count = 0;
+		foreach ($queryAllMhs as $row) {
+			$count = $count + 1;
+
 		?>
-		<!-- <tr>
-			<td>1</td>
-			<td>2112</td>
-			<td>Vigo</td>
-			<td>Sistem Informasi</td>
-			<td>
-				<a href="<?php echo base_url('/home/halaman_edit') ?>">Edit</a> | <a href="">Hapus</a>
-			</td> -->
-		</tr>
+			<tr>
+				<td><?php echo $count ?></td>
+				<td><?php echo $row->nim ?></td>
+				<td><?php echo $row->nama ?></td>
+				<td><?php echo $row->jurusan ?></td>
+				<td>
+					<a href="<?php echo base_url('/home/halaman_edit') ?>/<?php echo $row->nim ?>">Edit</a> | <a href="">Hapus</a>
+				</td>
+			</tr>
+		<?php } ?>
 	</table>
+
 </body>
 
 </html>

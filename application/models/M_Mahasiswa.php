@@ -6,4 +6,14 @@ class M_Mahasiswa extends CI_Model{
         $query = $this->db->get('mahasiswa');
         return $query->result();
     }
+
+    function insertDataMahasiswa($data){
+        $this->db->insert('mahasiswa', $data);
+    }
+
+    function getDataMahasiswaDetail($nim){
+        $this->db->where('nim', $nim);
+        $query = $this->db->get('mahasiswa');
+        return $query->row();
+    }
 }

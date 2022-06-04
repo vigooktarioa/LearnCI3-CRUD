@@ -10,11 +10,13 @@
 
 <body>
     <h1>Halaman Edit</h1>
+    <form action="<?php echo base_url('home/fungsiEdit') ?>" method="post"></form>
     <table>
         <tr>
             <td>NIM</td>
             <td>:
-            <td><input type="text" name="nim" readonly></td>
+            <td><input type=" text" name="nim" readonly>
+            </td>
         </tr>
         <tr>
             <td>Nama</td>
@@ -30,6 +32,7 @@
             <td colspan="3"><button type="text" name="nama">Update Mahasiswa</button></td>
         </tr>
     </table>
+    </form>
 </body>
 
 </html>
