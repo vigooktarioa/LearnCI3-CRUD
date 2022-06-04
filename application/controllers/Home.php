@@ -28,10 +28,12 @@ class Home extends CI_Controller {
 
 	public function halaman_edit($nim){
 		$queryMahasiswaDetail = $this->M_Mahasiswa->getDataMahasiswaDetail($nim);
-		echo "<pre>";
-		print_r($queryMahasiswaDetail);
-		echo "</pre>";
-		$this->load->view('edit_mhs');
+        $DATA = array(
+			'queryMahasiswaDetail' => $queryMahasiswaDetail);
+		// echo "<pre>";
+		// print_r($queryMahasiswaDetail);
+		// echo "</pre>";
+		$this->load->view('edit_mhs', $DATA);
 	}
 
 	public function fungsiTambah(){
@@ -47,5 +49,20 @@ class Home extends CI_Controller {
 		
 		$this->M_Mahasiswa->insertDataMahasiswa($ArrInsert);
 		redirect(base_url(''));
+	}
+
+	public function fungsiEdit(){
+		$nim = $this->input->post('nim');
+		$nama = $this->input->post('nama');
+		$jurusan = $this->input->post('jurusan');
+
+		$ArrUpdate = array(
+			'nama' => $nama,
+			'jurusan' => $jurusan
+		);
+
+		$this->M_Mahasiswa->updateDataMahasiswa($nim, $ArrUpdate);
+		redirect(base_url(''));
+
 	}
 }

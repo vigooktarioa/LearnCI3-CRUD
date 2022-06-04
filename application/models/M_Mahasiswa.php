@@ -16,4 +16,9 @@ class M_Mahasiswa extends CI_Model{
         $query = $this->db->get('mahasiswa');
         return $query->row();
     }
+
+    function updateDataMahasiswa($nim, $data){
+        $this->db->where('nim', $nim);
+        $this->db->update('mahasiswa', $data);
+    }
 }
