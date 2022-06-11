@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <?php require_once 'include/navbar.php'; ?>
     <h1>Halaman Tambah</h1>
     <!-- panggil function dari class controller, disini class controllernya adalah home -->
     <form action="<?php echo base_url('home/fungsiTambah') ?>" method="post">

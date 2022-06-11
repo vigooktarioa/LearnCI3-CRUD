@@ -11,6 +11,7 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->helper('url');
 		$queryAllMahasiswa = $this->M_Mahasiswa->getDataMahasiswa();
 		// echo "<pre>";
 		// print_r($queryAllMahasiswa);
@@ -19,7 +20,9 @@ class Home extends CI_Controller {
 		$DATA = array(
 			'queryAllMhs' => $queryAllMahasiswa);
 
+		$this->load->view('include/navbar');
 		$this->load->view('home', $DATA);
+		
 	}
 	
 	public function halaman_tambah() {
